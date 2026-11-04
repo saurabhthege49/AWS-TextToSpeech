@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text2Voice - AWS Polly</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Text2Voice</h1>
+            <p>Turn your text into natural speech using AWS Polly.</p>
+        </header>
+
+        <main>
+            <label for="textInput">Enter your text</label>
+
+            <textarea
+                id="textInput"
+                maxlength="2500"
+                placeholder="Type or paste your text here..."
+            ></textarea>
+
+            <div class="info">
+                <span id="charCount">0 / 2500 characters</span>
+                <span>English · MP3</span>
+            </div>
+
+            <button id="convertBtn">
+                Convert to Speech
+            </button>
+
+            <p id="status"></p>
+
+            <section id="audioSection" class="audio-section" hidden>
+                <h3>Your Generated Audio</h3>
+
+                <audio id="audioPlayer" controls></audio>
+
+                <a id="downloadLink" download="converted-audio.mp3">
+                    Download MP3
+                </a>
+            </section>
+        </main>
+
+        <footer>
+            Powered by AWS Lambda, Amazon Polly and Amazon S3
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
